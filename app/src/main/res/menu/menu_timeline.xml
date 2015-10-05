@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codepath.apps.SimpleTwitter.activities.TimelineActivity">
+    <item
+        android:id="@+id/action_compose"
+        android:title="@string/action_compose"
+        android:icon="@drawable/ic_compose"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/miActionProgress"
+        android:title="Loading..."
+        android:visible="false"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        app:actionLayout="@layout/action_view_progress" />
+</menu>

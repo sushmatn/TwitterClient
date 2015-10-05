@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ComposeTweetFragment">
+
+    <ImageView
+        android:id="@+id/ivDismiss"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/cardView"
+        android:padding="5dp"
+        android:src="@drawable/ic_dismiss" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:id="@+id/ivProfileImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/replyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/cardView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/minMargin"
+        android:visibility="gone"
+        android:layout_alignRight="@+id/cardView"
+        android:layout_below="@+id/cardView">
+
+        <ImageView
+            android:layout_width="@dimen/iconSizeSmall"
+            android:layout_height="@dimen/iconSizeSmall"
+            android:src="@drawable/ic_reply_to" />
+
+        <TextView
+            android:id="@+id/tvReplyToTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/minMargin"
+            android:text="@string/replyTo" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText"
+        android:layout_alignEnd="@+id/cardView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cardView"
+        android:layout_below="@+id/replyContainer"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="#00000000"
+        android:gravity="top"
+        android:hint="@string/tweetDefault"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/viewMargin"
+            android:background="@color/colorPrimary"
+            android:enabled="false"
+            android:text="@string/btnTweet"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvTweetLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/viewMargin"
+            android:layout_toLeftOf="@+id/btnTweet"
+            android:layout_toStartOf="@+id/btnTweet"
+            android:text="@string/defTweetLength"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/viewMargin"
+        android:layout_toLeftOf="@+id/cardView"
+        android:layout_toStartOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvName"
+        android:layout_marginRight="@dimen/viewMargin"
+        android:layout_toLeftOf="@+id/cardView"
+        android:layout_toStartOf="@+id/cardView"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
